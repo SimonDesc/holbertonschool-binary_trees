@@ -1,13 +1,4 @@
 #include "binary_trees.h"
-/**
- * print_num - Prints a number
- *
- * @n: Number to be printed
- */
-void print_num(int n)
-{
-	printf("%d\n", n);
-}
 
 /**
  * binary_tree_preorder -  that goes through a binary tree
@@ -19,7 +10,7 @@ void print_num(int n)
  */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
-	if (tree != NULL)
+	if (tree && func)
 	{
 		func(tree->n);
 		binary_tree_preorder(tree->left, func);
